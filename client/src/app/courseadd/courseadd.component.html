@@ -1,0 +1,32 @@
+  <form #courseForm="ngForm" (ngSubmit)="courseForm.valid && onSubmit(courseForm)">
+
+    <input type="text" #courseCategory="ngModel" [(ngModel)]="courseService.selectedCourse.courseCategory" name="courseCategory" placeholder="Course Category"
+    required  [ngClass]="{'invalid-textbox' :courseForm.submitted && !courseCategory.valid }">
+    <div *ngIf="courseForm.submitted && !courseCategory.valid">
+      <label class="validation-message">This field is required.</label>
+    </div>
+    
+    <input type="text" #courseName="ngModel" [(ngModel)]="courseService.selectedCourse.courseName" name="courseName" placeholder="Course Name"
+    required  [ngClass]="{'invalid-textbox' :courseForm.submitted && !courseName.valid }">
+    <div *ngIf="courseForm.submitted && !courseName.valid">
+      <label class="validation-message">This field is required.</label>
+    </div>
+    
+    <input type="text" #courseDescription="ngModel" [(ngModel)]="courseService.selectedCourse.courseDescription" name="courseDescription" placeholder="Course Description"
+    required  [ngClass]="{'invalid-textbox' :courseForm.submitted && !courseDescription.valid }">
+    <div *ngIf="courseForm.submitted && !courseDescription.valid">
+      <label class="validation-message">This field is required.</label>
+    </div>
+    
+    <input type="submit" value="Create Course">
+  </form>
+  
+  <!-- Success message -->
+  <div class="success" *ngIf="showSucessMessage">
+    Saved successfully
+  </div>
+  
+  <!-- Error message -->
+  <div class="alert" *ngIf="serverErrorMessages">
+    {{serverErrorMessages}}
+  </div>
