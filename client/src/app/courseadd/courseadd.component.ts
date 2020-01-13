@@ -27,7 +27,8 @@ export class CourseaddComponent implements OnInit {
     course.courseName = form.value['courseName'];
     course.courseDescription = form.value['courseDescription'];
     course.courseImage = form.value['courseImage'];
-    
+    console.log("this is course from form");
+    console.log(course);
     this.courseService.postCourse(course).subscribe(
       res => {
         this.showSucessMessage = true;
