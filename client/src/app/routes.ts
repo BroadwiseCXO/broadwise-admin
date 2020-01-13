@@ -6,6 +6,7 @@ import { SignUpComponent } from './user/sign-up/sign-up.component';
 import { SignInComponent } from './user/sign-in/sign-in.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { CourseaddComponent } from './courseadd/courseadd.component';
+import { CmoduleaddComponent } from './cmoduleadd/cmoduleadd.component';
 
 export const appRoutes: Routes = [
     {
@@ -21,6 +22,9 @@ export const appRoutes: Routes = [
     },
     {
         path: 'courseadd', component: CourseaddComponent,canActivate:[AuthGuard]
+    },
+    {
+        path: 'cmoduleadd', component: CmoduleaddComponent,canActivate:[AuthGuard]
     },
     {
         path: '', redirectTo: '/login', pathMatch: 'full'

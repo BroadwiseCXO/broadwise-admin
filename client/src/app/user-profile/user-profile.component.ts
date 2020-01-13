@@ -24,11 +24,11 @@ export class UserProfileComponent implements OnInit {
   }
 
   onClickAddModule(){
-    this.router.navigate(['/courseadd']);
+    this.router.navigate(['/cmoduleadd']);
   }
 
   onClickDropModule(){
-    this.router.navigate(['/courseadd']);
+    this.router.navigate(['/cmoduleadd']);
   }
 
 

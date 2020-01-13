@@ -1,0 +1,55 @@
+  <form #cmoduleForm="ngForm" (ngSubmit)="cmoduleForm.valid && onSubmit(cmoduleForm)">
+
+
+    <input type="text" #courseName="ngModel" [(ngModel)]="cmoduleService.selectedCmodule.courseName" name="courseName" placeholder="Course Name"
+    required  [ngClass]="{'invalid-textbox' :cmoduleForm.submitted && !courseName.valid }">
+    <div *ngIf="cmoduleForm.submitted && !courseName.valid">
+      <label class="validation-message">This field is required.</label>
+    </div>
+    
+    <input type="text" #cmoduleName="ngModel" [(ngModel)]="cmoduleService.selectedCmodule.cmoduleName" name="cmoduleName" placeholder="Module Name"
+    required  [ngClass]="{'invalid-textbox' :cmoduleForm.submitted && !cmoduleName.valid }">
+    <div *ngIf="cmoduleForm.submitted && !cmoduleName.valid">
+      <label class="validation-message">This field is required.</label>
+    </div>
+    
+    <input type="text" #cmoduleDescription="ngModel" [(ngModel)]="cmoduleService.selectedCmodule.cmoduleDescription" name="cmoduleDescription" placeholder="Module Description"
+    required  [ngClass]="{'invalid-textbox' :cmoduleForm.submitted && !cmoduleDescription.valid }">
+    <div *ngIf="cmoduleForm.submitted && !cmoduleDescription.valid">
+      <label class="validation-message">This field is required.</label>
+    </div>
+    
+
+    <input type="text" #cmoduleAuthor="ngModel" [(ngModel)]="cmoduleService.selectedCmodule.cmoduleAuthor" name="cmoduleAuthor" placeholder="Module Author"
+    required  [ngClass]="{'invalid-textbox' :cmoduleForm.submitted && !cmoduleAuthor.valid }">
+    <div *ngIf="cmoduleForm.submitted && !cmoduleAuthor.valid">
+      <label class="validation-message">This field is required.</label>
+    </div>
+  
+
+    <input type="text" #cmoduleURL="ngModel" [(ngModel)]="cmoduleService.selectedCmodule.cmoduleURL" name="cmoduleURL" placeholder="Module URL"
+    required  [ngClass]="{'invalid-textbox' :cmoduleForm.submitted && !cmoduleURL.valid }">
+    <div *ngIf="cmoduleForm.submitted && !cmoduleURL.valid">
+      <label class="validation-message">This field is required.</label>
+    </div>
+ 
+    
+    <input type="text" #cmodulePassword="ngModel" [(ngModel)]="cmoduleService.selectedCmodule.cmodulePassword" name="cmodulePassword" placeholder="Module Password"
+    required  [ngClass]="{'invalid-textbox' :cmoduleForm.submitted && !cmodulePassword.valid }">
+    <div *ngIf="cmoduleForm.submitted && !cmodulePassword.valid">
+      <label class="validation-message">This field is required.</label>
+    </div>
+ 
+
+    <input type="submit" value="Create Module">
+  </form>
+  
+  <!-- Success message -->
+  <div class="success" *ngIf="showSucessMessage">
+    Saved successfully
+  </div>
+  
+  <!-- Error message -->
+  <div class="alert" *ngIf="serverErrorMessages">
+    {{serverErrorMessages}}
+  </div>

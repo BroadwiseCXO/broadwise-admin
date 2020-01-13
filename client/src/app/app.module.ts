@@ -14,8 +14,12 @@ import { SignInComponent } from './user/sign-in/sign-in.component';
 import { UserService } from './shared/user.service';
 import { UserComponent } from './user/user.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
+
 import { CourseService } from './shared/course.service';
 import { CourseaddComponent } from './courseadd/courseadd.component';
+
+import { CmoduleService } from './shared/cmodule.service';
+import { CmoduleaddComponent } from './cmoduleadd/cmoduleadd.component';
 
 
 
@@ -26,7 +30,8 @@ import { CourseaddComponent } from './courseadd/courseadd.component';
     SignUpComponent,
     UserProfileComponent,
     SignInComponent,
-    CourseaddComponent
+    CourseaddComponent,
+    CmoduleaddComponent
     ],
   imports: [
     BrowserModule,
@@ -38,7 +43,7 @@ import { CourseaddComponent } from './courseadd/courseadd.component';
     provide: HTTP_INTERCEPTORS,
     useClass: AuthInterceptor,
     multi: true
-  },AuthGuard,UserService,CourseService],
+  },AuthGuard,UserService,CourseService,CmoduleService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
