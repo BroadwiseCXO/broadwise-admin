@@ -11,7 +11,7 @@ module.exports.cmodule = (req, res, next) => {
     cmodule.cmoduleName = req.body.cmoduleName;
     cmodule.cmoduleDescription = req.body.cmoduleDescription;
     cmodule.cmoduleAuthor = req.body.cmoduleAuthor;
-    cmodule.cmoduleURL = req.body.cmoduleURL;
+    cmodule.cmoduleURL = "<iframe src=\"+req.body.cmoduleURL\""+" frameborder=\"0\" allow=\"accelerometer; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>";
     cmodule.cmodulePassword = req.body.cmodulePassword;
     cmodule.isActive = "Y";
     
