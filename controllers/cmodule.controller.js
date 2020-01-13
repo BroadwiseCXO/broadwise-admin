@@ -7,12 +7,12 @@ const Cmodule = mongoose.model('Cmodule');
 module.exports.cmodule = (req, res, next) => {
     var cmodule = new Cmodule();
     
-    cmodule.courseName = req.body.fullName;
-    cmodule.cmoduleName = req.body.fullName;
-    cmodule.cmoduleDescription = req.body.fullName;
-    cmodule.cmoduleAuthor = req.body.fullName;
-    cmodule.cmoduleURL = req.body.fullName;
-    cmodule.cmodulePassword = req.body.fullName;
+    cmodule.courseName = req.body.courseName;
+    cmodule.cmoduleName = req.body.cmoduleName;
+    cmodule.cmoduleDescription = req.body.cmoduleDescription;
+    cmodule.cmoduleAuthor = req.body.cmoduleAuthor;
+    cmodule.cmoduleURL = req.body.cmoduleURL;
+    cmodule.cmodulePassword = req.body.cmodulePassword;
     cmodule.isActive = "Y";
     
     cmodule.save((err, doc) => {

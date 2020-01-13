@@ -7,10 +7,10 @@ const Course = mongoose.model('Course');
 module.exports.course = (req, res, next) => {
     var course = new Course();
     
-    course.courseCategory = req.body.fullName;
-    course.courseName = req.body.fullName;
-    course.courseDescription = req.body.fullName;
-    course.courseImage = req.body.fullName;
+    course.courseCategory = req.body.courseCategory;
+    course.courseName = req.body.courseName;
+    course.courseDescription = req.body.courseDescription;
+    course.courseImage = req.body.courseImage;
     course.isActive = "Y";
 
     console.log("this is the course");
