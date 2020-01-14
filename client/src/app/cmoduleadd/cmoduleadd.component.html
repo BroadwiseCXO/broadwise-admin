@@ -27,7 +27,7 @@
     </div>
   
 
-    <input type="text" #cmoduleURL="ngModel" [(ngModel)]="cmoduleService.selectedCmodule.cmoduleURL" name="cmoduleURL" placeholder="Module URL"
+    <input type="text" #cmoduleURL="ngModel" [(ngModel)]="cmoduleService.selectedCmodule.cmoduleURL" name="cmoduleURL" placeholder="expected format - https://player.vimeo.com/video/(enter_video_id)"
     required  [ngClass]="{'invalid-textbox' :cmoduleForm.submitted && !cmoduleURL.valid }">
     <div *ngIf="cmoduleForm.submitted && !cmoduleURL.valid">
       <label class="validation-message">This field is required.</label>
